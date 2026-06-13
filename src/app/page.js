@@ -304,7 +304,7 @@ export default function Home() {
             technology.
           </p>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
             {contactLinks.map((link) => (
               <a
                 key={link.label}
@@ -313,9 +313,9 @@ export default function Home() {
                 className="rounded-2xl border border-gray-800 p-5 transition hover:border-gray-500 hover:bg-white/10"
               >
                 <p className="text-sm text-gray-400">{link.label}</p>
-                <p className="mt-2 break-words font-semibold text-white">
-                  {link.value}
-                </p>
+                <p className="mt-2 text-sm font-semibold text-white sm:text-base">
+  {link.value}
+</p>                     
               </a>
             ))}
           </div>
