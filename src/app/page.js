@@ -320,13 +320,29 @@ export default function Home() {
   href={link.href}
   target={link.label === "Email" ? "_self" : "_blank"}
   rel="noopener noreferrer"
-  className="rounded-2xl border border-gray-800 p-5 transition hover:border-gray-500 hover:bg-white/10"
+  className="contact-card group rounded-2xl border border-gray-800 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/10"
+  style={{
+  "--contact-color": link.color,
+}}
 >
-  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
+  <div
+    className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border text-2xl transition duration-300 group-hover:scale-110"
+    style={{
+      color: link.color,
+      borderColor: `${link.color}99`,
+      backgroundColor: `${link.color}18`,
+      boxShadow: `0 0 22px ${link.color}40`,
+    }}
+  >
     {icons[link.icon]}
   </div>
 
-  <p className="text-sm text-gray-400">{link.label}</p>
+  <p
+    className="text-sm font-medium"
+    style={{ color: link.color }}
+  >
+    {link.label}
+  </p>
 
   <p className="mt-2 text-sm font-semibold text-white sm:text-base">
     {link.value}

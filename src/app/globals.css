@@ -36,3 +36,45 @@ body {
   background: white;
   color: black;
 }
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    color-mix(in srgb, var(--contact-color) 22%, transparent),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: color-mix(in srgb, var(--contact-color) 65%, transparent);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--contact-color) 18%, transparent);
+  transform: translateY(-3px);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-icon {
+  color: var(--contact-color);
+  border-color: color-mix(in srgb, var(--contact-color) 45%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--contact-color) 16%, transparent);
+}
+
+.contact-card:hover .contact-icon {
+  background: color-mix(in srgb, var(--contact-color) 12%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--contact-color) 35%, transparent);
+}
+.contact-card:hover {
+  border-color: var(--contact-color);
+  box-shadow: 0 0 25px color-mix(in srgb, var(--contact-color) 22%, transparent);
+}
