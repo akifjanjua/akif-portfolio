@@ -1,6 +1,13 @@
 import { projects, experiences, skills, contactLinks } from "@/data/portfolioData";
 import { MdEmail } from "react-icons/md";
-import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaLinkedin,
+  FaGithub,
+  FaGraduationCap,
+  FaDraftingCompass,
+  FaMicrochip,
+} from "react-icons/fa";
 export default function Home() {
   const icons = {
     email: <MdEmail />,
@@ -21,99 +28,107 @@ export default function Home() {
       {/* Navbar */}
 <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
   <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="#" className="text-lg font-semibold tracking-wide">
+    <a href="#" className="text-base font-semibold tracking-wide md:text-lg">
       Muhammad Akif Janjua
     </a>
 
-    <div className="hidden items-center gap-8 text-sm text-gray-400 md:flex">
+    <div className="hidden items-center gap-7 text-sm text-gray-400 md:flex">
       <a href="#about" className="transition hover:text-white">
         About
       </a>
+
+      <a href="#education" className="transition hover:text-white">
+        Education
+      </a>
+
+      <a href="#experience" className="transition hover:text-white">
+        Experience
+      </a>
+
       <a href="#projects" className="transition hover:text-white">
         Projects
       </a>
-     <a href="#experience" className="transition hover:text-white">
-  Experience
-</a>
-<a href="#skills" className="transition hover:text-white">
-  Skills
-</a>
-<a href="#contact" className="transition hover:text-white">
-  Contact
-</a>
-    </div>
 
-    <a
-      href="#contact"
-      className="hidden rounded-full border border-gray-700 px-4 py-2 text-sm font-semibold transition hover:border-white md:block"
-    >
-      Hire Me
-    </a>
+      <a href="#skills" className="transition hover:text-white">
+        Skills
+      </a>
+
+      <a href="#contact" className="transition hover:text-white">
+        Contact
+      </a>
+    </div>
   </nav>
 </header>
       {/* Hero Section */}
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-24">
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
-          Mechanical Engineer
-        </p>
+<section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-28">
+  <p className="mb-5 text-sm uppercase tracking-[0.35em] text-gray-400">
+    Muhammad Akif Janjua
+  </p>
 
-        <h2 className="max-w-4xl text-5xl font-bold leading-tight md:text-7xl">
-          Building engineering solutions through design, manufacturing, and technology.
-        </h2>
+  <h1 className="max-w-5xl text-4xl font-bold leading-[1.12] tracking-tight text-white md:text-5xl lg:text-5xl">
+    Mechanical Engineering Graduate focused on manufacturing, robotics, CAD/CAM,
+    and AI-driven solutions.
+  </h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-          I am a Mechanical Engineering graduate from NUST with interests in
-          CAD design, manufacturing, robotics, automation, and AI-driven
-          engineering applications.
-        </p>
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-  <a
-    href="#projects"
-    className="rounded-full bg-white px-7 py-3 text-center text-sm font-semibold text-black transition hover:bg-gray-200"
-  >
-    View Projects
-  </a>
+  <p className="mt-7 max-w-[620px] text-base leading-[1.8] text-gray-400 md:text-lg">
+    A NUST Mechanical Engineering graduate with experience in CNC optimization,
+    CREO CAM validation, robotics, project documentation, and industrial
+    engineering workflows through internships at DEL/Descon Engineering Limited
+    and NESCOM.
+  </p>
 
-  <a
-    href="#contact"
-    className="rounded-full border border-gray-700 px-7 py-3 text-center text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
-  >
-    Contact Me
-  </a>
-
+  <div className="mt-10 flex flex-col gap-4 sm:flex-row">
   <a
     href="/Muhammad-Akif-Janjua-CV.pdf"
     download
-    className="rounded-full border border-gray-700 px-7 py-3 text-center text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+    className="rounded-full border border-gray-700 bg-black px-8 py-3.5 text-center text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
   >
     Download CV
   </a>
+
+  <a
+    href="#projects"
+    className="rounded-full border border-gray-700 bg-black px-8 py-3.5 text-center text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
+  >
+    View Projects
+  </a>
 </div>
-      
 
-        <div className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-gray-800 pt-8 sm:grid-cols-3">
-          <div>
-            <h3 className="text-2xl font-bold">NUST</h3>
-            <p className="mt-2 text-sm text-gray-400">
-              Mechanical Engineering
-            </p>
-          </div>
+  <div className="mt-16 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
+    <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]">
+      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
+        <FaGraduationCap />
+      </div>
 
-          <div>
-            <h3 className="text-2xl font-bold">CAD</h3>
-            <p className="mt-2 text-sm text-gray-400">
-              SolidWorks & Design
-            </p>
-          </div>
+      <h3 className="text-xl font-bold">NUST</h3>
+      <p className="mt-2 text-sm leading-6 text-gray-400">
+        BE Mechanical Engineering
+      </p>
+    </div>
 
-          <div>
-            <h3 className="text-2xl font-bold">AI + CNC</h3>
-            <p className="mt-2 text-sm text-gray-400">
-              Final Year Project
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]">
+      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
+        <FaDraftingCompass />
+      </div>
+
+      <h3 className="text-xl font-bold">CAD/CAM</h3>
+      <p className="mt-2 text-sm leading-6 text-gray-400">
+        SolidWorks, CREO, ANSYS, CNC
+      </p>
+    </div>
+
+    <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]">
+      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
+        <FaMicrochip />
+      </div>
+
+      <h3 className="text-xl font-bold">AI + CNC</h3>
+      <p className="mt-2 text-sm leading-6 text-gray-400">
+        XGBoost, NSGA-II, CREO CAM
+      </p>
+    </div>
+  </div>
+</section>
             {/* About Section */}
       <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="grid gap-10 md:grid-cols-2">
@@ -303,9 +318,8 @@ export default function Home() {
           </p>
 
           <h2 className="max-w-3xl text-4xl font-bold md:text-5xl">
-            Interested in working together or discussing an opportunity?
-          </h2>
-
+  Interested in hiring me or discussing an engineering opportunity?
+</h2>             
           <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
             I am open to mechanical engineering roles, trainee engineer
             opportunities, internships, technical projects, and collaborations
