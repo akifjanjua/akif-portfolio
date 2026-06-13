@@ -37,7 +37,7 @@ useEffect(() => {
 }, []);
 
 const headerHeight = 68 + 82 * (1 - scrollProgress);
-const nameSize = 18 + 8 * (1 - scrollProgress);
+const nameSize = 18 + 12 * (1 - scrollProgress);
 const navLift = 10 * (1 - scrollProgress);
   const icons = {
     email: <MdEmail />,
