@@ -1,4 +1,12 @@
-import { projects, experiences, skills, contactLinks } from "@/data/portfolioData";
+import Image from "next/image";
+import {
+  projects,
+  experiences,
+  skills,
+  contactLinks,
+  education,
+  certificates,
+} from "@/data/portfolioData";
 import { MdEmail } from "react-icons/md";
 import {
   FaWhatsapp,
@@ -7,6 +15,8 @@ import {
   FaGraduationCap,
   FaDraftingCompass,
   FaMicrochip,
+  FaChevronDown,
+  FaCertificate,
 } from "react-icons/fa";
 export default function Home() {
   const icons = {
@@ -165,6 +175,60 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Education Section */}
+<section id="education" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
+  <div className="mb-12">
+    <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
+      Education
+    </p>
+
+    <h2 className="text-4xl font-bold md:text-5xl">
+      Academic background.
+    </h2>
+
+    <p className="copy-text mt-4 max-w-2xl text-lg leading-8 text-gray-400">
+      My academic foundation in mechanical engineering, design, manufacturing,
+      and engineering sciences.
+    </p>
+  </div>
+
+  <div className="space-y-6">
+    {education.map((item) => (
+      <div
+        key={item.degree}
+        className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition duration-300 hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]"
+      >
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">
+              {item.duration}
+            </p>
+
+            <h3 className="text-2xl font-bold text-white">
+              {item.degree}
+            </h3>
+
+            <p className="mt-2 text-gray-400">
+              {item.institution}
+            </p>
+
+            <p className="mt-1 text-sm text-gray-500">
+              {item.location}
+            </p>
+          </div>
+
+          <span className="w-fit rounded-full border border-gray-700 px-4 py-2 text-sm font-semibold text-white">
+            {item.result}
+          </span>
+        </div>
+
+        <p className="copy-text mt-6 max-w-4xl leading-7 text-gray-400">
+          {item.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
             {/* Projects Section */}
       <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="mb-12">
@@ -215,60 +279,149 @@ export default function Home() {
         </div>
       </section>
             {/* Experience Section */}
-      <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-        <div className="mb-12">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
-            Experience
-          </p>
+<section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
+  <div className="mb-12">
+    <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
+      Experience
+    </p>
 
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Academic and professional journey.
-          </h2>
+    <h2 className="text-4xl font-bold md:text-5xl">
+      Professional experience.
+    </h2>
 
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-gray-400">
-            A summary of my engineering education, internship exposure, and
-            practical learning experiences.
-          </p>
-        </div>
+    <p className="copy-text mt-4 max-w-2xl text-lg leading-8 text-gray-400">
+      Internship experience involving industrial project workflows, planning,
+      engineering documentation, CAD/CAM validation, and AI-driven manufacturing
+      research.
+    </p>
+  </div>
 
-        <div className="space-y-6">
-          {experiences.map((experience) => (
-            <div
-              key={experience.role}
-              className="rounded-3xl border border-gray-800 bg-white/5 p-6 transition hover:border-gray-500 hover:bg-white/10"
+  <div className="space-y-6">
+    {experiences.map((experience) => (
+      <details
+        key={experience.company}
+        className="group rounded-3xl border border-gray-800 bg-[#111111] p-6 transition duration-300 hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]"
+      >
+        <summary className="flex cursor-pointer list-none flex-col justify-between gap-6 md:flex-row md:items-start">
+          <div>
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">
+              {experience.duration}
+            </p>
+
+            <h3 className="text-2xl font-bold text-white">
+              {experience.company}
+            </h3>
+
+            <p className="mt-2 text-gray-400">
+              {experience.role} · {experience.type}
+            </p>
+
+            <p className="mt-1 text-sm text-gray-500">
+              {experience.location}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3 text-sm font-semibold text-gray-300">
+            <span>View Details</span>
+            <FaChevronDown className="transition duration-300 group-open:rotate-180" />
+          </div>
+        </summary>
+
+        <p className="copy-text mt-6 max-w-4xl leading-7 text-gray-400">
+          {experience.summary}
+        </p>
+
+        <ul className="mt-6 space-y-3 text-gray-400">
+          {experience.details.map((point) => (
+            <li key={point} className="flex gap-3 leading-7">
+              <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+              <span className="copy-text">{point}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {experience.tools.map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full border border-gray-700 px-3 py-1 text-xs text-gray-300"
             >
-              <div className="flex flex-col justify-between gap-4 md:flex-row">
-                <div>
-                  <h3 className="text-2xl font-bold">
-                    {experience.role}
-                  </h3>
-
-                  <p className="mt-2 text-gray-400">
-                    {experience.company}
-                  </p>
-                </div>
-
-                <p className="text-sm text-gray-400">
-                  {experience.duration}
-                </p>
-              </div>
-
-              <p className="mt-6 leading-7 text-gray-400">
-                {experience.description}
-              </p>
-
-              <ul className="mt-6 space-y-3 text-gray-400">
-                {experience.points.map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-white"></span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              {tool}
+            </span>
           ))}
         </div>
-      </section>
+      </details>
+    ))}
+  </div>
+</section>
+{/* Certificates Section */}
+<section id="certificates" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
+  <div className="mb-12">
+    <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
+      Certificates
+    </p>
+
+    <h2 className="text-4xl font-bold md:text-5xl">
+      Certificates and documents.
+    </h2>
+
+    <p className="copy-text mt-4 max-w-2xl text-lg leading-8 text-gray-400">
+      Supporting documents and internship certificates related to my professional
+      training and engineering project work.
+    </p>
+  </div>
+
+  <div className="grid gap-6 md:grid-cols-2">
+    {certificates.map((certificate) => (
+      <div
+        key={certificate.title}
+        className="rounded-3xl border border-gray-800 bg-[#111111] p-5 transition duration-300 hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]"
+      >
+        <a
+          href={certificate.image}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block overflow-hidden rounded-2xl border border-gray-800 bg-black/40"
+        >
+          <Image
+            src={certificate.image}
+            alt={certificate.title}
+            width={900}
+            height={650}
+            className="h-56 w-full object-cover object-top transition duration-300 hover:scale-[1.03]"
+          />
+        </a>
+
+        <div className="pt-6">
+          <p className="mb-3 text-sm uppercase tracking-[0.2em] text-gray-500">
+            {certificate.date}
+          </p>
+
+          <h3 className="text-2xl font-bold text-white">
+            {certificate.title}
+          </h3>
+
+          <p className="mt-2 text-gray-400">
+            {certificate.issuer}
+          </p>
+
+          <p className="copy-text mt-4 leading-7 text-gray-400">
+            {certificate.description}
+          </p>
+
+          <a
+            href={certificate.image}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex rounded-full border border-gray-700 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
+          >
+            Open Certificate
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
             {/* Skills Section */}
       <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="mb-12">
