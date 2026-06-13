@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+}
+
+::selection {
+  background: white;
+  color: black;
+}

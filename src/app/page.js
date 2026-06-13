@@ -1,23 +1,49 @@
 import { projects, experiences, skills, contactLinks } from "@/data/portfolioData";
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="relative min-h-screen overflow-x-hidden bg-black text-white">
+            {/* Premium Background */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[450px] w-[450px] rounded-full bg-purple-500/10 blur-[130px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_35%)]" />
+      </div>
       {/* Navbar */}
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <h1 className="text-lg font-semibold tracking-wide">
-          Akif Janjua
-        </h1>
+      {/* Navbar */}
+<header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
+  <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="#" className="text-lg font-semibold tracking-wide">
+      Akif Janjua
+    </a>
 
-        <div className="hidden gap-8 text-sm text-gray-400 md:flex">
-          <a href="#about" className="hover:text-white">About</a>
-          <a href="#projects" className="hover:text-white">Projects</a>
-          <a href="#experience" className="hover:text-white">Experience</a>
-          <a href="#contact" className="hover:text-white">Contact</a>
-        </div>
-      </nav>
+    <div className="hidden items-center gap-8 text-sm text-gray-400 md:flex">
+      <a href="#about" className="transition hover:text-white">
+        About
+      </a>
+      <a href="#projects" className="transition hover:text-white">
+        Projects
+      </a>
+     <a href="#experience" className="transition hover:text-white">
+  Experience
+</a>
+<a href="#skills" className="transition hover:text-white">
+  Skills
+</a>
+<a href="#contact" className="transition hover:text-white">
+  Contact
+</a>
+    </div>
 
+    <a
+      href="#contact"
+      className="hidden rounded-full border border-gray-700 px-4 py-2 text-sm font-semibold transition hover:border-white md:block"
+    >
+      Hire Me
+    </a>
+  </nav>
+</header>
       {/* Hero Section */}
-      <section className="mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-6">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-24">
         <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
           Mechanical Engineer
         </p>
@@ -31,22 +57,30 @@ export default function Home() {
           CAD design, manufacturing, robotics, automation, and AI-driven
           engineering applications.
         </p>
-
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#projects"
-            className="rounded-full bg-white px-7 py-3 text-center text-sm font-semibold text-black transition hover:bg-gray-200"
-          >
-            View Projects
-          </a>
+  <a
+    href="#projects"
+    className="rounded-full bg-white px-7 py-3 text-center text-sm font-semibold text-black transition hover:bg-gray-200"
+  >
+    View Projects
+  </a>
 
-          <a
-            href="#contact"
-            className="rounded-full border border-gray-700 px-7 py-3 text-center text-sm font-semibold text-white transition hover:border-white"
-          >
-            Contact Me
-          </a>
-        </div>
+  <a
+    href="#contact"
+    className="rounded-full border border-gray-700 px-7 py-3 text-center text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+  >
+    Contact Me
+  </a>
+
+  <a
+    href="/Muhammad-Akif-Janjua-CV.pdf"
+    download
+    className="rounded-full border border-gray-700 px-7 py-3 text-center text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+  >
+    Download CV
+  </a>
+</div>
+      
 
         <div className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-gray-800 pt-8 sm:grid-cols-3">
           <div>
@@ -72,7 +106,7 @@ export default function Home() {
         </div>
       </section>
             {/* About Section */}
-      <section id="about" className="mx-auto max-w-6xl px-6 py-24">
+      <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="grid gap-10 md:grid-cols-2">
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
@@ -108,7 +142,7 @@ export default function Home() {
         </div>
       </section>
             {/* Projects Section */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-24">
+      <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="mb-12">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
             Projects
@@ -157,7 +191,7 @@ export default function Home() {
         </div>
       </section>
             {/* Experience Section */}
-      <section id="experience" className="mx-auto max-w-6xl px-6 py-24">
+      <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="mb-12">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
             Experience
@@ -212,7 +246,7 @@ export default function Home() {
         </div>
       </section>
             {/* Skills Section */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
+      <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="mb-12">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
             Skills
@@ -253,7 +287,7 @@ export default function Home() {
         </div>
       </section>
             {/* Contact Section */}
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+      <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
         <div className="rounded-3xl border border-gray-800 bg-white/5 p-8 md:p-12">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
             Contact
