@@ -73,12 +73,12 @@ export const contactLinks = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/your-linkedin",
-    href: "https://linkedin.com/in/your-linkedin",
+    value: "www.linkedin.com/in/akif-janjua",
+    href: "https://www.linkedin.com/in/akif-janjua",
   },
   {
     label: "GitHub",
-    value: "github.com/your-github-username",
-    href: "https://github.com/your-github-username",
+    value: "github.com/akifjanjua",
+    href: "https://github.com/akifjanjua",
   },
 ];
