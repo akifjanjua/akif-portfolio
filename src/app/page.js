@@ -304,12 +304,12 @@ export default function Home() {
             technology.
           </p>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {contactLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                target={link.label === "Email" ? "_self" : "_blank"}
+                target={link.label === "Email" || link.label === "Phone" ? "_self" : "_blank"}
                 className="rounded-2xl border border-gray-800 p-5 transition hover:border-gray-500 hover:bg-white/10"
               >
                 <p className="text-sm text-gray-400">{link.label}</p>

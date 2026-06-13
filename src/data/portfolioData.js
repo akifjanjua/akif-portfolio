@@ -72,6 +72,11 @@ export const contactLinks = [
     href: "mailto:akif.janjua.123@gmail.com",
   },
   {
+    label: "Phone",
+    value: "+92 300 0466970 ",
+    href: "tel:+923000466970",
+  },
+  {
     label: "LinkedIn",
     value: "Muhammad Akif Janjua",
     href: "https://www.linkedin.com/in/akif-janjua",
