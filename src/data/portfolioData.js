@@ -1,24 +1,36 @@
 export const projects = [
   {
-    title: "AI-Driven CNC Optimization",
+    title: "AI-Driven Multi-Objective Toolpath Optimization",
+    slug: "ai-driven-cnc-optimization",
     category: "Final Year Project",
+    duration: "Jul 2025 to May 2026",
     description:
-      "Developed an intelligent decision-support system for CNC milling that recommends optimal cutting parameters using machine learning and multi-objective optimization.",
-    tools: ["Python", "XGBoost", "NSGA-II", "CNC Milling"],
+      "Developed a hybrid CNC milling decision-support system using XGBoost, NSGA-II, and analytical machining models to recommend optimized cutting parameters for prismatic parts.",
+    impact:
+      "Optimized machining time, surface roughness, and energy consumption simultaneously, with predicted machining times validated against CREO CAM simulations.",
+    tools: ["Python", "XGBoost", "NSGA-II", "CREO CAM", "CNC Milling"],
   },
   {
-    title: "Hand Gesture Controlled Car",
+    title: "Electric Human Powered Vehicle",
+    slug: "electric-human-powered-vehicle",
+    category: "Mechanical Design Project",
+    duration: "Jan 2025 to Jun 2025",
+    description:
+      "Designed and developed an Electric Human Powered Vehicle by integrating mechanical design with an electric-assist system to improve mobility and efficiency.",
+    impact:
+      "Combined drivetrain layout, structural geometry, and battery-motor synchronization to support smoother power delivery and improved ride control.",
+    tools: ["Mechanical Design", "Drivetrain", "Battery-Motor System", "Vehicle Design"],
+  },
+  {
+    title: "Hand-Gesture Controlled Car",
+    slug: "hand-gesture-controlled-car",
     category: "Robotics Project",
+    duration: "Sep 2024 to Jan 2025",
     description:
-      "Built a gesture-controlled robotic car using ESP32 modules, MPU6050 sensor, motor drivers, and wireless communication for real-time movement control.",
-    tools: ["ESP32", "MPU6050", "Arduino IDE", "Embedded Systems"],
-  },
-  {
-    title: "CAD & Mechanical Design Projects",
-    category: "Design Portfolio",
-    description:
-      "Created mechanical models and design concepts using CAD tools, focusing on engineering design, visualization, and practical mechanical systems.",
-    tools: ["SolidWorks", "CAD", "Mechanical Design"],
+      "Developed a gesture-controlled car using ESP32 and MPU6050 to enable real-time multi-directional movement through hand-motion inputs.",
+    impact:
+      "Implemented motion-detection logic in C++ that allowed the vehicle to stop automatically when gestures stopped, improving control and safety.",
+    tools: ["ESP32", "MPU6050", "C++", "Arduino IDE", "Robotics"],
   },
 ];
 export const experiences = [
