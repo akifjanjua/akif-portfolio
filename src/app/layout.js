@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Akif Janjua | Mechanical Engineer",
+  title: "Muhammad Akif Janjua | Mechanical Engineer",
   description:
-    "Portfolio website of Akif Janjua, Mechanical Engineering graduate from NUST with interests in CAD design, manufacturing, robotics, automation, and AI-driven engineering applications.",
+    "Portfolio website of MuhammadAkif Janjua, Mechanical Engineering graduate from NUST with interests in CAD design, manufacturing, robotics, automation, and AI-driven engineering applications.",
 };
 
 export default function RootLayout({ children }) {

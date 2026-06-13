@@ -70,20 +70,24 @@ export const contactLinks = [
     label: "Email",
     value: "akif.janjua.123@gmail.com",
     href: "mailto:akif.janjua.123@gmail.com",
+    icon: "email",
   },
   {
-    label: "Phone",
-    value: "+92 300 0466970 ",
-    href: "tel:+923000466970",
+    label: "WhatsApp / Phone",
+    value: "+92 300 0466970",
+    href: "https://wa.me/923000466970",
+    icon: "whatsapp",
   },
   {
     label: "LinkedIn",
     value: "Muhammad Akif Janjua",
     href: "https://www.linkedin.com/in/akif-janjua",
+    icon: "linkedin",
   },
   {
     label: "GitHub",
     value: "Muhammad Akif Janjua",
     href: "https://github.com/akifjanjua",
+    icon: "github",
   },
 ];

@@ -1,5 +1,14 @@
 import { projects, experiences, skills, contactLinks } from "@/data/portfolioData";
+import { MdEmail } from "react-icons/md";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Home() {
+  const icons = {
+    email: <MdEmail />,
+    whatsapp: <FaWhatsapp />,
+    linkedin: <FaLinkedin />,
+    github: <FaGithub />,
+  };
+
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-black text-white">
             {/* Premium Background */}
@@ -13,7 +22,7 @@ export default function Home() {
 <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
   <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
     <a href="#" className="text-lg font-semibold tracking-wide">
-      Akif Janjua
+      Muhammad Akif Janjua
     </a>
 
     <div className="hidden items-center gap-8 text-sm text-gray-400 md:flex">
@@ -307,16 +316,22 @@ export default function Home() {
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {contactLinks.map((link) => (
               <a
-                key={link.label}
-                href={link.href}
-                target={link.label === "Email" || link.label === "Phone" ? "_self" : "_blank"}
-                className="rounded-2xl border border-gray-800 p-5 transition hover:border-gray-500 hover:bg-white/10"
-              >
-                <p className="text-sm text-gray-400">{link.label}</p>
-                <p className="mt-2 text-sm font-semibold text-white sm:text-base">
-  {link.value}
-</p>                     
-              </a>
+  key={link.label}
+  href={link.href}
+  target={link.label === "Email" ? "_self" : "_blank"}
+  rel="noopener noreferrer"
+  className="rounded-2xl border border-gray-800 p-5 transition hover:border-gray-500 hover:bg-white/10"
+>
+  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
+    {icons[link.icon]}
+  </div>
+
+  <p className="text-sm text-gray-400">{link.label}</p>
+
+  <p className="mt-2 text-sm font-semibold text-white sm:text-base">
+    {link.value}
+  </p>
+</a>
             ))}
           </div>
         </div>
@@ -324,7 +339,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-gray-900 px-6 py-8 text-center text-sm text-gray-500">
-        © 2026 Akif Janjua. Built with Next.js and Tailwind CSS.
+        © 2026 Muhammad Akif Janjua. Built with Next.js and Tailwind CSS.
       </footer>
     </main>
   );
