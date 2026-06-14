@@ -21,24 +21,47 @@ import {
   FaChevronDown,
   FaCertificate,
 } from "react-icons/fa";
+const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#education", label: "Education" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
+  { href: "#certificates", label: "Certifications" },
+  { href: "#contact", label: "Contact" },
+];
 export default function Home() {
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
 useEffect(() => {
   const handleScroll = () => {
-    const progress = Math.min(window.scrollY / 160, 1);
-    setScrollProgress(progress);
+    setScrollProgress(Math.min(window.scrollY / 160, 1));
+  };
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
   };
 
   handleScroll();
-  window.addEventListener("scroll", handleScroll);
+  handleResize();
 
-  return () => window.removeEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleResize);
+  };
 }, []);
 
-const headerHeight = 68 + 82 * (1 - scrollProgress);
-const nameSize = 18 + 12 * (1 - scrollProgress);
-const navLift = 10 * (1 - scrollProgress);
+const desktopHeaderHeight = 68 + 82 * (1 - scrollProgress);
+const mobileHeaderHeight = 92 + 28 * (1 - scrollProgress);
+const headerHeight = isMobile ? mobileHeaderHeight : desktopHeaderHeight;
+const desktopNameSize = 18 + 8 * (1 - scrollProgress);
+const mobileNameSize = 18 + 4 * (1 - scrollProgress);
+const nameSize = isMobile ? mobileNameSize : desktopNameSize;
+const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
   const icons = {
     email: <MdEmail />,
     whatsapp: <FaWhatsapp />,
@@ -57,62 +80,38 @@ const navLift = 10 * (1 - scrollProgress);
       {/* Navbar */}
       {/* Navbar */}
 <header
-  className="fixed left-0 top-0 z-50 w-full border-b border-white/10 backdrop-blur-xl"
-  style={{
-    height: `${headerHeight}px`,
-    backgroundColor: `rgba(0, 0, 0, ${0.58 + scrollProgress * 0.22})`,
-  }}
+  className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-xl transition-all duration-100"
+  style={{ height: `${headerHeight}px` }}
 >
-  <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-6">
+  <div
+    className="mx-auto flex h-full max-w-6xl flex-col justify-center gap-3 px-5 md:flex-row md:items-end md:justify-between md:px-8 md:pb-4"
+    style={{
+      transform: isMobile ? "none" : `translateY(-${navLift}px)`,
+    }}
+  >
     <a
-      href="#"
-      className="font-semibold tracking-wide text-white"
-      style={{
-        fontSize: `${nameSize}px`,
-        lineHeight: "1",
-      }}
+      href="#home"
+      className="whitespace-nowrap font-bold tracking-tight text-white"
+      style={{ fontSize: `${nameSize}px` }}
     >
       Muhammad Akif Janjua
     </a>
 
-    <div
-      className="hidden items-center gap-7 text-sm text-gray-400 md:flex"
-      style={{
-        transform: `translateY(${navLift}px)`,
-      }}
-    >
-      <a href="#about" className="transition hover:text-white">
-  About
-</a>
-
-<a href="#education" className="transition hover:text-white">
-  Education
-</a>
-
-<a href="#experience" className="transition hover:text-white">
-  Experience
-</a>
-
-<a href="#projects" className="transition hover:text-white">
-  Projects
-</a>
-
-<a href="#skills" className="transition hover:text-white">
-  Skills
-</a>
-
-<a href="#certificates" className="transition hover:text-white">
-  Certifications
-</a>
-
-<a href="#contact" className="transition hover:text-white">
-  Contact
-</a>
-    </div>
-  </nav>
+    <nav className="flex w-full gap-4 overflow-x-auto whitespace-nowrap pb-1 text-xs text-gray-300 md:w-auto md:gap-5 md:overflow-visible md:pb-0 md:text-sm">
+      {navLinks.map((link) => (
+        <a
+          key={link.href}
+          href={link.href}
+          className="shrink-0 transition hover:text-white"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
 </header>
       {/* Hero Section */}
-<section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-28">
+<section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-[170px] md:pt-28">
   <h1 className="max-w-4xl text-4xl font-bold leading-[1.12] tracking-tight text-white md:text-5xl lg:text-5xl">
     Mechanical Engineering Graduate focused on manufacturing, robotics, CAD/CAM,
     and AI-driven solutions.
@@ -121,7 +120,7 @@ const navLift = 10 * (1 - scrollProgress);
   <p className="copy-text mt-7 max-w-[620px] text-base leading-[1.8] text-gray-400 md:text-lg">
     A NUST Mechanical Engineering graduate with experience in CNC optimization,
     CREO CAM validation, robotics, project documentation, and industrial
-    engineering workflows through internships at DEL/Descon Engineering Limited
+    engineering workflows through internships at DEL (DESCON Engineering Limited)
     and NESCOM.
   </p>
 

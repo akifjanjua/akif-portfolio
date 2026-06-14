@@ -198,7 +198,7 @@ export const projects = [
 export const experiences = [
   {
     role: "Intern",
-    company: "DEL / Descon Engineering Limited",
+    company: "DEL (DESCON Engineering Limited)",
     type: "Internship",
     duration: "Aug 2025 – Sep 2025",
     location: "Lahore, Pakistan · On-site",

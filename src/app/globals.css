@@ -119,3 +119,7 @@ details summary {
   border-color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.08);
 }
+html,
+body {
+  overflow-x: hidden;
+}
