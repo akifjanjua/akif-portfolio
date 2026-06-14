@@ -112,10 +112,16 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
 </header>
       {/* Hero Section */}
 <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-[170px] md:pt-28">
-  <h1 className="max-w-4xl text-4xl font-bold leading-[1.12] tracking-tight text-white md:text-5xl lg:text-5xl">
-    Mechanical Engineering Graduate focused on manufacturing, robotics, CAD/CAM,
-    and AI-driven solutions.
-  </h1>
+  <h1 className="max-w-4xl text-[26px] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+  <span className="block md:hidden">
+    Mechanical Engineering Graduate focused on CAD/CAM, Robotics, and AI.
+  </span>
+
+  <span className="hidden md:block">
+    Mechanical Engineering Graduate focused on Manufacturing, Robotics, CAD/CAM,
+    and AI-driven Solutions.
+  </span>
+</h1>
 
   <p className="copy-text mt-7 max-w-[620px] text-base leading-[1.8] text-gray-400 md:text-lg">
     A NUST Mechanical Engineering graduate with experience in CNC optimization,
