@@ -4,7 +4,7 @@ export const projects = [
   slug: "ai-driven-cnc-optimization",
   category: "Final Year Project",
   duration: "Jul 2025 to May 2026",
-  thumbnail: "/projects/fyp-thumbnail.png",
+  thumbnail: "/projects/fyp-thumbnail-simple.png",
 
   description:
     "Developed a hybrid CNC milling decision-support system using XGBoost, NSGA-II, and analytical machining models to recommend optimized cutting parameters for prismatic parts.",
@@ -96,9 +96,9 @@ export const projects = [
   {
   title: "Electric Human Powered Vehicle (e-HPV)",
   slug: "electric-human-powered-vehicle",
-  category: "Major Design Project",
+  category: "Machine Design Project",
   duration: "Jan 2025 to Jun 2025",
-  thumbnail: "/projects/ehpv/ehpv-thumbnail-v3.jpg",   
+  thumbnail: "/projects/ehpv/ehpv-thumbnail-simple.png", 
 
   description:
     "Designed and engineered an electric human powered vehicle using a recumbent tadpole trike configuration to improve stability, rider safety, aerodynamic performance, and energy-efficient urban commuting.",
@@ -186,7 +186,7 @@ export const projects = [
   {
     title: "Hand-Gesture Controlled Car",
     slug: "hand-gesture-controlled-car",
-    category: "Robotics Project",
+    category: "Controls Project",
     duration: "Sep 2024 to Jan 2025",
     description:
       "Developed a gesture-controlled car using ESP32 and MPU6050 to enable real-time multi-directional movement through hand-motion inputs.",
