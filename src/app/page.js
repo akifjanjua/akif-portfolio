@@ -289,40 +289,49 @@ const navLift = 10 * (1 - scrollProgress);
     <Link
       key={project.title}
       href={`/projects/${project.slug}`}
-      className="rounded-3xl border border-gray-800 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-gray-500 hover:bg-white/10"
+      className="group overflow-hidden rounded-3xl border border-gray-800 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-gray-500 hover:bg-white/10"
     >
-      <div className="mb-4 flex flex-col gap-1">
-        <p className="text-sm text-gray-400">{project.category}</p>
-        <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
-          {project.duration}
+      {project.thumbnail ? (
+        <div className="overflow-hidden border-b border-gray-800 bg-black/40">
+          <Image
+            src={project.thumbnail}
+            alt={`${project.title} thumbnail`}
+            width={900}
+            height={500}
+            className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        </div>
+      ) : (
+        <div className="flex h-48 items-center justify-center border-b border-gray-800 bg-[#111111] text-sm text-gray-500">
+          Project thumbnail coming soon
+        </div>
+      )}
+
+      <div className="p-6">
+        <div className="mb-4 flex flex-col gap-1">
+          <p className="text-sm text-gray-400">{project.category}</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-gray-500">
+            {project.duration}
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold">{project.title}</h3>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {project.tools.slice(0, 4).map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full border border-gray-700 px-3 py-1 text-xs text-gray-300"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+
+        <p className="mt-6 text-sm font-semibold text-white transition group-hover:text-gray-300">
+          View Project →
         </p>
       </div>
-
-      <h3 className="text-2xl font-bold">{project.title}</h3>
-
-      <p className="copy-text mt-4 leading-7 text-gray-400">
-        {project.description}
-      </p>
-
-      <p className="copy-text mt-4 rounded-2xl border border-gray-800 bg-black/40 p-4 text-sm leading-6 text-gray-300">
-        <span className="font-semibold text-white">Impact: </span>
-        {project.impact}
-      </p>
-
-      <div className="mt-6 flex flex-wrap gap-2">
-        {project.tools.map((tool) => (
-          <span
-            key={tool}
-            className="rounded-full border border-gray-700 px-3 py-1 text-xs text-gray-300"
-          >
-            {tool}
-          </span>
-        ))}
-      </div>
-
-      <p className="mt-6 text-sm font-semibold text-white">
-        View Project →
-      </p>
     </Link>
   ))}
 </div> 

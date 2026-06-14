@@ -1,15 +1,98 @@
 export const projects = [
   {
-    title: "AI-Driven Multi-Objective Toolpath Optimization",
-    slug: "ai-driven-cnc-optimization",
-    category: "Final Year Project",
-    duration: "Jul 2025 to May 2026",
+  title: "AI-Driven Multi-Objective Toolpath Optimization",
+  slug: "ai-driven-cnc-optimization",
+  category: "Final Year Project",
+  duration: "Jul 2025 – May 2026",
+  thumbnail: "/projects/fyp-thumbnail.png",
+
+  description:
+    "Developed a hybrid CNC milling decision-support system using XGBoost, NSGA-II, and analytical machining models to recommend optimized cutting parameters for prismatic parts.",
+
+  impact:
+    "Optimized machining time, surface roughness, and energy consumption simultaneously, with predicted machining times validated against CREO CAM simulations.",
+
+  overview:
+    "This project involved developing a complete AI-driven decision-support system and desktop GUI application for sustainable CNC milling. The system recommends optimized cutting parameters for generic prismatic parts by combining machine learning, CAD/CAM simulation data, physics-based machining equations, and multi-objective optimization.",
+
+  problem:
+    "CNC cutting parameter selection is often dependent on manual operator experience, which can lead to inefficient machining decisions, longer cycle times, poor surface finish, and higher energy consumption. The project addressed this by automating parameter recommendation using an intelligent optimization-based approach.",
+
+  objective:
+    "The objective was to automate the selection of spindle speed, feed rate, axial depth of cut, and stepover for prismatic CNC milling parts while simultaneously minimizing machining time, surface roughness, and energy consumption.",
+
+  methodology: [
+    "Developed a complete decision-support system and desktop application interface to automate optimal cutting parameter selection for generic prismatic parts.",
+    "Generated an engineering dataset by running over 13,000 CREO CAM simulation iterations across 30 different prismatic part geometries to capture complex machining behavior.",
+    "Trained and fine-tuned an XGBoost regression model using regularized parameters to map tabular geometric features and cutting variables to machining cycle time predictions.",
+    "Coupled the machine learning time-prediction model with physics-based analytical equations for surface roughness and energy consumption.",
+    "Formulated a multi-objective optimization problem to balance machining time, surface roughness, and energy consumption.",
+    "Deployed the NSGA-II evolutionary optimization framework to handle conflicting manufacturing objectives and generate a Pareto-optimal set of non-dominated solutions.",
+    "Built a custom backend material database featuring 8 specific alloys, including multiple grades of Aluminum, Stainless Steel, and Mild Steel.",
+    "Created a fully interactive GUI application that accepts part dimensions, pocket configurations, and tool selections to output optimized spindle speed, feed rate, axial depth of cut, and stepover.",
+  ],
+
+  results: [
+    "Produced optimized CNC milling recommendations for spindle speed, feed rate, axial depth of cut, and stepover.",
+    "Reduced reliance on manual operator experience by creating a data-driven decision-support workflow.",
+    "Generated Pareto-optimal solutions for trade-offs between machining time, surface roughness, and energy consumption.",
+    "Validated predicted machining behavior using CREO CAM simulations.",
+    "Demonstrated practical feasibility through the machining of a final aluminum validation component.",
+  ],
+
+  tools: [
+    "Machine Learning",
+    "Multi-Objective Optimization",
+    "CAD/CAM",
+    "Python",
+    "Sustainable Manufacturing",
+    "CNC Milling",
+    "XGBoost",
+    "Genetic Algorithms",
+    "PTC Creo",
+    "User Interface Design",
+    "NSGA-II",
+  ],
+
+  gallery: [
+  {
+    src: "/projects/fyp/machined-part-v2.jpg",
+    title: "Physically Machined Part",
     description:
-      "Developed a hybrid CNC milling decision-support system using XGBoost, NSGA-II, and analytical machining models to recommend optimized cutting parameters for prismatic parts.",
-    impact:
-      "Optimized machining time, surface roughness, and energy consumption simultaneously, with predicted machining times validated against CREO CAM simulations.",
-    tools: ["Python", "XGBoost", "NSGA-II", "CREO CAM", "CNC Milling"],
+      "Experimental validation of the optimized cutting parameters through a final machined aluminum component.",
   },
+  {
+    src: "/projects/fyp/dashboard-v2.jpg",
+    title: "AI Decision-Support Interface",
+    description:
+      "Graphical interface displaying optimized cutting parameters, predicted machining time, surface roughness, and energy consumption.",
+  },
+  {
+    src: "/projects/fyp/architecture-v2.jpg",
+    title: "Optimization System Architecture",
+    description:
+      "End-to-end workflow showing geometry input, XGBoost prediction, NSGA-II optimization, Pareto front generation, and selected optimized parameters.",
+  },
+  {
+    src: "/projects/fyp/creo-simulation-v2.jpg",
+    title: "CREO CAM Toolpath Simulation",
+    description:
+      "CAM simulation used to validate tool motion, material removal, and predicted machining behavior before physical manufacturing.",
+  },
+  {
+    src: "/projects/fyp/response-surface-v2.jpg",
+    title: "Response Surface Optimization Plots",
+    description:
+      "DOE-based response surface plots showing nonlinear relationships between machining variables and performance outputs.",
+  },
+  {
+    src: "/projects/fyp/perturbation-analysis-v2.jpg",
+    title: "Parameter Perturbation Analysis",
+    description:
+      "Sensitivity analysis showing how individual cutting parameters influence machining performance and cycle time.",
+  },
+],
+},,
   {
     title: "Electric Human Powered Vehicle",
     slug: "electric-human-powered-vehicle",
