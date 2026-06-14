@@ -3,7 +3,7 @@ export const projects = [
   title: "AI-Driven Multi-Objective Toolpath Optimization",
   slug: "ai-driven-cnc-optimization",
   category: "Final Year Project",
-  duration: "Jul 2025 – May 2026",
+  duration: "Jul 2025 to May 2026",
   thumbnail: "/projects/fyp-thumbnail.png",
 
   description:
@@ -94,16 +94,95 @@ export const projects = [
 ],
 },,
   {
-    title: "Electric Human Powered Vehicle",
-    slug: "electric-human-powered-vehicle",
-    category: "Mechanical Design Project",
-    duration: "Jan 2025 to Jun 2025",
-    description:
-      "Designed and developed an Electric Human Powered Vehicle by integrating mechanical design with an electric-assist system to improve mobility and efficiency.",
-    impact:
-      "Combined drivetrain layout, structural geometry, and battery-motor synchronization to support smoother power delivery and improved ride control.",
-    tools: ["Mechanical Design", "Drivetrain", "Battery-Motor System", "Vehicle Design"],
-  },
+  title: "Electric Human Powered Vehicle (e-HPV)",
+  slug: "electric-human-powered-vehicle",
+  category: "Major Design Project",
+  duration: "Jan 2025 to Jun 2025",
+  thumbnail: "/projects/ehpv/ehpv-thumbnail.jpg",
+
+  description:
+    "Designed and engineered an electric human powered vehicle using a recumbent tadpole trike configuration to improve stability, rider safety, aerodynamic performance, and energy-efficient urban commuting.",
+
+  impact:
+    "Validated structural safety, aerodynamic behavior, and electrical integration through simulation-driven design, resulting in a functional prototype with stable straight-line performance, controlled turning behavior, and an estimated operating range of up to 30 kilometers per charge.",
+
+  overview:
+    "This project focused on the complete design, engineering, and physical development of an Electric Human Powered Vehicle (e-HPV). The vehicle used a recumbent tricycle layout with two front wheels and one rear wheel to improve stability, reduce tipping risk, and optimize aerodynamic drag. The project combined mechanical design, structural validation, CFD analysis, electrical system integration, and prototype fabrication into a complete engineering solution.",
+
+  problem:
+    "A practical electric human powered vehicle must balance structural strength, rider safety, aerodynamic efficiency, maneuverability, and electrical reliability. Designing such a vehicle requires integration of multiple engineering domains while ensuring that the final system remains lightweight, stable, durable, and operationally safe.",
+
+  objective:
+    "The objective was to design and validate an electric human powered vehicle capable of safe and efficient urban mobility by optimizing chassis structure, aerodynamic performance, rollover protection, drivetrain integration, and braking behavior.",
+
+  methodology: [
+    "Developed the vehicle concept using a recumbent tadpole trike layout with two front wheels and one rear wheel to improve stability and reduce aerodynamic resistance.",
+    "Designed the primary chassis using mild steel tubing and incorporated localized bracing and reinforcement gussets at critical joints to balance weight and structural durability.",
+    "Created a full 3D CAD model of the vehicle assembly to establish geometry, rider positioning, subsystem packaging, and layout optimization.",
+    "Performed Finite Element Analysis (FEA) in ANSYS to validate the Rollover Protection System and critical load-bearing members under severe loading conditions.",
+    "Evaluated safety performance through structural deformation analysis and confirmed acceptable localized deflections in the main frame.",
+    "Conducted Computational Fluid Dynamics (CFD) simulations at an inlet velocity of 32 km/h to study airflow behavior, wake formation, drag forces, and lift forces around the vehicle and rider region.",
+    "Engineered the electrical system architecture using a 36V 13Ah lithium-ion battery, L298 motor controller, variable resistor throttle control, and a 350W front hub motor.",
+    "Integrated a regenerative braking system to recover mechanical energy during deceleration and improve functional driving range.",
+    "Validated vehicle performance against key engineering targets including straight-line stability, turning capability, and braking response.",
+  ],
+
+  results: [
+    "Designed and fabricated a functional e-HPV prototype with a recumbent tadpole trike configuration.",
+    "Validated chassis and rollover protection structure using FEA under severe loading conditions.",
+    "Confirmed aerodynamic behavior through CFD analysis, including drag and lift force estimation.",
+    "Integrated a complete electrical propulsion and control system using a lithium-ion battery and hub motor setup.",
+    "Achieved stable straight-line behavior, controlled turning capability, and effective emergency braking performance.",
+    "Extended projected commuting capability to approximately 30 kilometers per charge through efficient system integration and regenerative braking considerations.",
+  ],
+
+  tools: [
+    "Finite Element Analysis (FEA)",
+    "Computational Fluid Dynamics (CFD)",
+    "Automotive Design",
+    "Structural Analysis",
+    "Electrical Systems Integration",
+    "CAD/CAM",
+    "Aerodynamics",
+    "Fatigue Analysis",
+    "Stress Analysis",
+    "Systems Engineering",
+    "Project Management",
+  ],
+
+  gallery: [
+    {
+      src: "/projects/ehpv/fabricated-prototype.jpg",
+      title: "Fabricated e-HPV Prototype",
+      description:
+        "Physical build of the electric human powered vehicle, showcasing the fabricated mild steel chassis framework, recumbent seating arrangement, and integrated drivetrain assembly.",
+    },
+    {
+      src: "/projects/ehpv/cad-assembly.jpg",
+      title: "3D CAD Vehicle Assembly",
+      description:
+        "Complete CAD model of the e-HPV used to define vehicle geometry, rider packaging, subsystem integration, and overall layout optimization.",
+    },
+    {
+      src: "/projects/ehpv/cfd-contours.jpg",
+      title: "Aerodynamic Performance & Velocity Contours",
+      description:
+        "CFD contour plot used to study airflow velocity distribution around the vehicle and identify wake separation behavior behind the rider.",
+    },
+    {
+      src: "/projects/ehpv/fea-analysis.jpg",
+      title: "FEA Structural Deformation Analysis",
+      description:
+        "Finite Element Analysis result validating the structural response of the rollover protection system and frame under severe loading conditions.",
+    },
+    {
+      src: "/projects/ehpv/electrical-schematic.jpg",
+      title: "Electrical System Control Schematic",
+      description:
+        "Schematic showing power distribution from the lithium-ion battery through the motor controller and throttle assembly to the drive motor.",
+    },
+  ],
+},
   {
     title: "Hand-Gesture Controlled Car",
     slug: "hand-gesture-controlled-car",

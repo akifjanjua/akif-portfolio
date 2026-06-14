@@ -7,7 +7,7 @@ import { projects } from "@/data/portfolioData";
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
 
-  const project = projects.find((item) => item.slug === slug);
+  const project = projects.find((item) => item?.slug === slug);
 
   if (!project) {
     notFound();
