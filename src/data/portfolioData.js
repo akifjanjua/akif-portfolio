@@ -320,4 +320,20 @@ export const certificates = [
       "Certificate awarded for internship work on AI-driven multi-objective toolpath optimization for sustainable CNC milling.",
     image: "/certificates/nescom-certificate.jpg",
   },
+  {
+    title: "Nestlé E-learning 2025 | Resilience",
+    issuer: "Nestlé",
+    date: "2025",
+    description:
+      "Certificate of completion for Nestlé E-learning 2025 | Resilience under the Nesternship / Nestlé needs YOUth program.",
+    image: "/certificates/nestle-e-learning-2025-resilience.png",
+  },
+  {
+    title: "Design Fest 24' Participation Certificate",
+    issuer: "Islamabad SolidWorks User Group (ISUG) x NUST",
+    date: "2024",
+    description:
+      "Certificate of participation in Design Fest 24', held at Jinnah Auditorium, NUST.",
+    image: "/certificates/design-fest-2024-isug-nust.png",
+  },
 ];

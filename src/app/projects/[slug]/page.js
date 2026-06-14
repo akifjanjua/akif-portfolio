@@ -1,8 +1,8 @@
-import ProjectGallery from "@/components/ProjectGallery";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/portfolioData";
+import ProjectGallery from "@/components/ProjectGallery";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -14,117 +14,137 @@ export default async function ProjectPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen bg-black px-6 py-24 text-white">
-      <section className="mx-auto max-w-6xl">
+    <main className="site-bg min-h-screen text-white">
+      <section className="mx-auto max-w-6xl px-6 py-28">
         <Link
           href="/#projects"
-          className="text-sm font-medium text-gray-400 transition hover:text-white"
+          className="inline-flex items-center rounded-full border border-sky-500/30 bg-slate-950/70 px-4 py-2 text-sm font-semibold text-sky-200 transition hover:border-sky-300 hover:bg-sky-300 hover:text-slate-950"
         >
           ← Back to Projects
         </Link>
 
         <div className="mt-12">
-          <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+          <p className="section-kicker mb-4 text-sm uppercase tracking-[0.35em]">
             {project.category}
           </p>
 
-          <h1 className="mt-4 max-w-5xl text-4xl font-bold leading-tight md:text-6xl">
+          <h1 className="max-w-5xl text-4xl font-bold leading-tight text-white md:text-6xl">
             {project.title}
           </h1>
 
-          <p className="mt-4 text-gray-400">{project.duration}</p>
+          <p className="mt-5 text-sm uppercase tracking-[0.25em] text-gray-500">
+            {project.duration}
+          </p>
+
+          <p className="copy-text mt-7 max-w-3xl text-lg leading-8 text-gray-400">
+            {project.description}
+          </p>
         </div>
 
         {project.thumbnail && (
-          <div className="mt-10 overflow-hidden rounded-3xl border border-gray-800 bg-[#111111]">
+          <div className="theme-card mt-12 overflow-hidden rounded-3xl p-3">
             <Image
               src={project.thumbnail}
-              alt={`${project.title} cover`}
+              alt={project.title}
               width={1400}
               height={800}
-              className="h-auto w-full object-cover"
+              className="max-h-[520px] w-full rounded-2xl object-cover"
               priority
             />
           </div>
         )}
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 lg:col-span-2">
-            <h2 className="text-2xl font-bold">Project Overview</h2>
-            <p className="copy-text mt-4 leading-8 text-gray-400">
+        <div className="mt-16 flex flex-col gap-10">
+          <div className="theme-card rounded-3xl p-7 md:p-8">
+            <h2 className="text-2xl font-bold text-white">Project Overview</h2>
+
+            <p className="copy-text mt-5 leading-8 text-gray-400">
               {project.overview || project.description}
             </p>
           </div>
 
-          <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6">
-            <h2 className="text-2xl font-bold">Impact</h2>
-            <p className="copy-text mt-4 leading-7 text-gray-400">
-              {project.impact}
-            </p>
-          </div>
-        </div>
+          {project.impact && (
+            <div className="theme-card rounded-3xl p-7 md:p-8">
+              <h2 className="text-2xl font-bold text-white">Impact</h2>
 
-        {project.problem && (
-          <div className="mt-6 rounded-3xl border border-gray-800 bg-[#111111] p-6">
-            <h2 className="text-2xl font-bold">Problem Statement</h2>
-            <p className="copy-text mt-4 leading-8 text-gray-400">
-              {project.problem}
-            </p>
-          </div>
-        )}
+              <p className="copy-text mt-5 leading-8 text-gray-400">
+                {project.impact}
+              </p>
+            </div>
+          )}
 
-        {project.objective && (
-          <div className="mt-6 rounded-3xl border border-gray-800 bg-[#111111] p-6">
-            <h2 className="text-2xl font-bold">Objective</h2>
-            <p className="copy-text mt-4 leading-8 text-gray-400">
-              {project.objective}
-            </p>
-          </div>
-        )}
+          {project.problem && (
+            <div className="theme-card rounded-3xl p-7 md:p-8">
+              <h2 className="text-2xl font-bold text-white">
+                Problem Statement
+              </h2>
 
-        {project.methodology && (
-          <div className="mt-6 rounded-3xl border border-gray-800 bg-[#111111] p-6">
-            <h2 className="text-2xl font-bold">Methodology</h2>
+              <p className="copy-text mt-5 leading-8 text-gray-400">
+                {project.problem}
+              </p>
+            </div>
+          )}
 
-            <ul className="mt-5 space-y-3 text-gray-400">
-              {project.methodology.map((item) => (
-                <li key={item} className="flex gap-3 leading-7">
-                  <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-white"></span>
-                  <span className="copy-text">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {project.objective && (
+            <div className="theme-card rounded-3xl p-7 md:p-8">
+              <h2 className="text-2xl font-bold text-white">Objective</h2>
 
-        {project.results && (
-          <div className="mt-6 rounded-3xl border border-gray-800 bg-[#111111] p-6">
-            <h2 className="text-2xl font-bold">Results & Outcomes</h2>
+              <p className="copy-text mt-5 leading-8 text-gray-400">
+                {project.objective}
+              </p>
+            </div>
+          )}
 
-            <ul className="mt-5 space-y-3 text-gray-400">
-              {project.results.map((item) => (
-                <li key={item} className="flex gap-3 leading-7">
-                  <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-white"></span>
-                  <span className="copy-text">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          {project.methodology && project.methodology.length > 0 && (
+            <div className="theme-card rounded-3xl p-7 md:p-8">
+              <h2 className="text-2xl font-bold text-white">Methodology</h2>
 
-                <div className="mt-8">
-          <h2 className="text-2xl font-bold">Skills & Tools Used</h2>
+              <ul className="mt-6 space-y-4 text-gray-400">
+                {project.methodology.map((item) => (
+                  <li key={item} className="flex gap-3 leading-7">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {project.tools.map((tool) => (
-              <span
-                key={tool}
-                className="rounded-full border border-gray-700 px-3 py-1 text-xs text-gray-300"
-              >
-                {tool}
-              </span>
-            ))}
-          </div>
+          {project.results && project.results.length > 0 && (
+            <div className="theme-card rounded-3xl p-7 md:p-8">
+              <h2 className="text-2xl font-bold text-white">
+                Results & Outcomes
+              </h2>
+
+              <ul className="mt-6 space-y-4 text-gray-400">
+                {project.results.map((item) => (
+                  <li key={item} className="flex gap-3 leading-7">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.tools && project.tools.length > 0 && (
+            <div className="theme-card rounded-3xl p-7 md:p-8">
+              <h2 className="text-2xl font-bold text-white">
+                Skills & Tools Used
+              </h2>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {project.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="theme-pill rounded-full px-4 py-2 text-sm"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <ProjectGallery gallery={project.gallery} />
