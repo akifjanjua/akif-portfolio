@@ -111,74 +111,53 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
   </div>
 </header>
       {/* Hero Section */}
-<section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-[170px] md:pt-28">
-  <h1 className="max-w-4xl text-[26px] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-  <span className="block md:hidden">
-    Mechanical Engineering Graduate focused on CAD/CAM, Robotics, and AI.
-  </span>
+<section className="mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-6 pt-[170px] md:grid-cols-[1.15fr_0.85fr] md:pt-28">
+  <div>
+    <h1 className="max-w-4xl text-[28px] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+      <span className="block md:hidden">
+        Mechanical Engineering Graduate focused on CAD/CAM, robotics, and AI.
+      </span>
 
-  <span className="hidden md:block">
-    Mechanical Engineering Graduate focused on Manufacturing, Robotics, CAD/CAM,
-    and AI-driven Solutions.
-  </span>
-</h1>
+      <span className="hidden md:block">
+        Mechanical Engineering Graduate focused on manufacturing, robotics, CAD/CAM,
+        and AI-driven solutions.
+      </span>
+    </h1>
 
-  <p className="copy-text mt-7 max-w-[620px] text-base leading-[1.8] text-gray-400 md:text-lg">
-    A NUST Mechanical Engineering graduate with experience in CNC optimization,
-    CREO CAM validation, robotics, project documentation, and industrial
-    engineering workflows through internships at DEL (DESCON Engineering Limited)
-    and NESCOM.
-  </p>
+    <p className="copy-text mt-7 max-w-[620px] text-base leading-[1.8] text-gray-400 md:text-lg">
+      A NUST Mechanical Engineering graduate with experience in CNC optimization,
+      CREO CAM validation, robotics, project documentation, and industrial
+      engineering workflows through internships at DEL (DESCON Engineering Limited)
+      and NESCOM.
+    </p>
 
-  <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-  <a
-    href="/Muhammad-Akif-Janjua-CV.pdf"
-    download
-    className="rounded-full border border-gray-700 bg-black px-8 py-3.5 text-center text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
-  >
-    Download CV
-  </a>
+    <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+      <a
+        href="/Muhammad-Akif-Janjua-CV.pdf"
+        download
+        className="rounded-full border border-gray-700 bg-black px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
+      >
+        Download CV
+      </a>
 
-  <a
-    href="#projects"
-    className="rounded-full border border-gray-700 bg-black px-8 py-3.5 text-center text-sm font-semibold text-white transition duration-300 hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
-  >
-    View Projects
-  </a>
-</div>
-
-  <div className="mt-16 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-3">
-    <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]">
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
-        <FaGraduationCap />
-      </div>
-
-      <h3 className="text-xl font-bold">NUST</h3>
-      <p className="mt-2 text-sm leading-6 text-gray-400">
-        BE Mechanical Engineering
-      </p>
+      <a
+        href="#projects"
+        className="rounded-full border border-gray-700 bg-black px-8 py-3.5 text-center text-sm font-semibold text-white transition hover:scale-[1.03] hover:border-white hover:bg-white hover:text-black"
+      >
+        View Projects
+      </a>
     </div>
+  </div>
 
-    <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]">
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
-        <FaDraftingCompass />
-      </div>
-
-      <h3 className="text-xl font-bold">CAD/CAM</h3>
-      <p className="mt-2 text-sm leading-6 text-gray-400">
-        SolidWorks, CREO, ANSYS, CNC
-      </p>
-    </div>
-
-    <div className="rounded-3xl border border-gray-800 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-gray-600 hover:bg-[#151515]">
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-gray-700 bg-white/5 text-xl text-white">
-        <FaMicrochip />
-      </div>
-
-      <h3 className="text-xl font-bold">AI + CNC</h3>
-      <p className="mt-2 text-sm leading-6 text-gray-400">
-        XGBoost, NSGA-II, CREO CAM
-      </p>
+  <div className="mx-auto w-full max-w-sm md:max-w-md">
+    <div className="overflow-hidden rounded-[2rem] border border-gray-800 bg-white/[0.04] p-3 shadow-2xl shadow-black/40">
+      <Image
+        src="/profile/akif-profile.jpg"
+        alt="Muhammad Akif Janjua"
+        width={700}
+        height={900}
+        className="h-[430px] w-full rounded-[1.5rem] object-cover object-[50%_22%]"
+      />
     </div>
   </div>
 </section>
