@@ -210,7 +210,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
     </p>
 
     <h2 className="text-4xl font-bold md:text-5xl">
-      Academic background.
+      Academic Background
     </h2>
 
     <p className="copy-text mt-4 max-w-2xl text-lg leading-8 text-gray-400">
@@ -264,7 +264,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
           </p>
 
           <h2 className="text-4xl font-bold md:text-5xl">
-            Selected engineering projects.
+            Major Projects
           </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-gray-400">
@@ -333,7 +333,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
     </p>
 
     <h2 className="text-4xl font-bold md:text-5xl">
-      Professional experience.
+      Professional Experience
     </h2>
 
     <p className="copy-text mt-4 max-w-2xl text-lg leading-8 text-gray-400">
@@ -409,7 +409,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
     </p>
 
     <h2 className="text-4xl font-bold md:text-5xl">
-      Certificates and documents.
+      Certificates and Documents
     </h2>
 
     <p className="copy-text mt-4 max-w-2xl text-lg leading-8 text-gray-400">
@@ -477,7 +477,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
           </p>
 
           <h2 className="text-4xl font-bold md:text-5xl">
-            Technical skills and tools.
+            Technical Skills and Tools
           </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-gray-400">
@@ -518,7 +518,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
           </p>
 
           <h2 className="max-w-3xl text-4xl font-bold md:text-5xl">
-  Interested in hiring me or discussing an engineering opportunity?
+  Interested in connecting?
 </h2>             
           <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
             I am open to mechanical engineering roles, trainee engineer
