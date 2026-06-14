@@ -98,7 +98,7 @@ export const projects = [
   slug: "electric-human-powered-vehicle",
   category: "Major Design Project",
   duration: "Jan 2025 to Jun 2025",
-  thumbnail: "/projects/ehpv/ehpv-thumbnail.jpg",
+  thumbnail: "/projects/ehpv/ehpv-thumbnail-v3.jpg",   
 
   description:
     "Designed and engineered an electric human powered vehicle using a recumbent tadpole trike configuration to improve stability, rider safety, aerodynamic performance, and energy-efficient urban commuting.",
@@ -151,37 +151,37 @@ export const projects = [
   ],
 
   gallery: [
-    {
-      src: "/projects/ehpv/fabricated-prototype.jpg",
-      title: "Fabricated e-HPV Prototype",
-      description:
-        "Physical build of the electric human powered vehicle, showcasing the fabricated mild steel chassis framework, recumbent seating arrangement, and integrated drivetrain assembly.",
-    },
-    {
-      src: "/projects/ehpv/cad-assembly.jpg",
-      title: "3D CAD Vehicle Assembly",
-      description:
-        "Complete CAD model of the e-HPV used to define vehicle geometry, rider packaging, subsystem integration, and overall layout optimization.",
-    },
-    {
-      src: "/projects/ehpv/cfd-contours.jpg",
-      title: "Aerodynamic Performance & Velocity Contours",
-      description:
-        "CFD contour plot used to study airflow velocity distribution around the vehicle and identify wake separation behavior behind the rider.",
-    },
-    {
-      src: "/projects/ehpv/fea-analysis.jpg",
-      title: "FEA Structural Deformation Analysis",
-      description:
-        "Finite Element Analysis result validating the structural response of the rollover protection system and frame under severe loading conditions.",
-    },
-    {
-      src: "/projects/ehpv/electrical-schematic.jpg",
-      title: "Electrical System Control Schematic",
-      description:
-        "Schematic showing power distribution from the lithium-ion battery through the motor controller and throttle assembly to the drive motor.",
-    },
-  ],
+  {
+    src: "/projects/ehpv/fabricated-prototype-v3.jpg",
+    title: "Fabricated e-HPV Prototype",
+    description:
+      "Physical build of the electric human powered vehicle, showcasing the fabricated mild steel chassis framework, recumbent seating arrangement, and integrated drivetrain assembly.",
+  },
+  {
+    src: "/projects/ehpv/cad-assembly-v3.jpg",
+    title: "3D CAD Vehicle Assembly",
+    description:
+      "Complete CAD model of the e-HPV used to define vehicle geometry, rider packaging, subsystem integration, and overall layout optimization.",
+  },
+  {
+    src: "/projects/ehpv/cfd-contours-v3.jpg",
+    title: "Aerodynamic Performance & Velocity Contours",
+    description:
+      "CFD contour plot used to study airflow velocity distribution around the vehicle and identify wake separation behavior behind the rider.",
+  },
+  {
+    src: "/projects/ehpv/fea-analysis-v3.jpg",
+    title: "FEA Structural Deformation Analysis",
+    description:
+      "Finite Element Analysis result validating the structural response of the rollover protection system and frame under severe loading conditions.",
+  },
+  {
+    src: "/projects/ehpv/electrical-schematic-v3.jpg",
+    title: "Electrical System Control Schematic",
+    description:
+      "Schematic showing power distribution from the battery through the motor controller and throttle assembly to the drive motor.",
+  },
+],
 },
   {
     title: "Hand-Gesture Controlled Car",
