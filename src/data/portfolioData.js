@@ -184,16 +184,86 @@ export const projects = [
 ],
 },
   {
-    title: "Hand-Gesture Controlled Car",
-    slug: "hand-gesture-controlled-car",
-    category: "Controls Project",
-    duration: "Sep 2024 to Jan 2025",
+  title: "Hand-Gesture Controlled Car",
+  slug: "hand-gesture-controlled-car",
+  category: "Robotics & Automation Project",
+  duration: "Sep 2024 – Jan 2025",
+  thumbnail: "/projects/hand-gesture-controlled-car/hand-gesture-controlled-car-thumbnail.png",
+  description:
+    "An ESP32-based gesture-controlled robotic car that translates real-time hand movements into vehicle motion commands using MPU6050 sensing, ESP-NOW wireless communication, PWM motor control, and obstacle detection.",
+  overview:
+    "This project involved the design and implementation of an intelligent human-machine interaction system using a dual ESP32 microcontroller architecture. A wearable transmitter unit captured hand gestures through an MPU6050 accelerometer and gyroscope, processed tilt-based motion data, and transmitted commands wirelessly to a vehicle receiver unit. The receiver controlled four DC motors through dual L298N drivers, allowing forward, backward, left, right, and stop commands based on real-time hand motion.",
+  problem:
+    "Conventional remote-controlled vehicles require handheld controllers or wired command systems, which limit natural interaction and flexibility. The goal of this project was to create a more intuitive control method where vehicle movement could be directed through physical hand gestures while maintaining reliable wireless communication, safety, and responsive motor control.",
+  objective:
+    "To develop a gesture-controlled robotic vehicle capable of interpreting hand-tilt movements, transmitting control commands wirelessly using ESP-NOW, driving four DC motors through PWM-based motor control, and stopping automatically when an obstacle is detected in the forward path.",
+  methodology: [
+    "Designed a dual ESP32-based architecture consisting of a gesture transmitter unit and a vehicle receiver unit.",
+    "Integrated an MPU6050 accelerometer and gyroscope sensor with the transmitter ESP32 to capture hand-tilt motion along the X, Y, and Z axes.",
+    "Mapped hand gesture orientations into directional vehicle commands including forward, backward, left, right, and stop.",
+    "Established low-latency ESP-NOW wireless communication between the transmitter and receiver ESP32 boards.",
+    "Controlled four independent TT DC motors using dual L298N motor driver modules with PWM signals for speed and motion regulation.",
+    "Added an HC-SR04 ultrasonic sensor for obstacle detection, triggering motor shutdown and buzzer alert when an obstacle was detected within 20 cm.",
+    "Implemented a fail-safe inactivity timeout that stopped all motor actions if no valid gesture command was received within a defined time window.",
+    "Applied control engineering concepts to model vehicle dynamics and develop a representative second-order system transfer function using mass, damping, and motion resistance assumptions.",
+  ],
+  results: [
+    "Developed a functional gesture-controlled robotic vehicle prototype using ESP32 microcontrollers.",
+    "Achieved real-time wireless gesture-to-motion control through ESP-NOW communication.",
+    "Implemented forward, backward, left, right, and stop motion commands based on MPU6050 hand-tilt readings.",
+    "Integrated obstacle detection and automatic shutdown logic using an ultrasonic sensor and buzzer warning system.",
+    "Improved reliability through debounce delays, sensitivity tuning, and inactivity timeout-based fail-safe control.",
+  ],
+  tools: [
+    "Robotics",
+    "Embedded Systems",
+    "Control Engineering",
+    "ESP32 Microcontrollers",
+    "Gesture Recognition",
+    "Internet of Things (IoT)",
+    "ESP-NOW",
+    "PWM",
+    "Sensor Integration",
+    "Signal Processing",
+    "MPU6050",
+    "HC-SR04",
+    "L298N Motor Driver",
+    "Arduino IDE",
+    "C++",
+  ],
+  gallery: [
+  {
+    src: "/projects/hand-gesture-controlled-car/prototype-assembly.png",
+    title: "Assembled Gesture-Controlled Robotic Prototype",
     description:
-      "Developed a gesture-controlled car using ESP32 and MPU6050 to enable real-time multi-directional movement through hand-motion inputs.",
-    impact:
-      "Implemented motion-detection logic in C++ that allowed the vehicle to stop automatically when gestures stopped, improving control and safety.",
-    tools: ["ESP32", "MPU6050", "C++", "Arduino IDE", "Robotics"],
+      "Complete physical hardware assembly of the mobile robotic platform, showcasing the integration of the central ESP32 receiver unit, dual L298N motor drivers, four independent TT DC motors, and the front-mounted ultrasonic sensor module.",
   },
+  {
+    src: "/projects/hand-gesture-controlled-car/transmitter-breadboard.png",
+    title: "Kinematic Gesture Transmitter Breadboard Assembly",
+    description:
+      "Hardware prototyping of the wearable transmitter node, featuring an ESP32 development board interfaced with an MPU6050 inertial measurement unit to capture and process real-time hand-tilt variations.",
+  },
+  {
+    src: "/projects/hand-gesture-controlled-car/receiver-motor-driver-diagram.png",
+    title: "Receiver Hub & Motor Drivetrain Circuit Diagram",
+    description:
+      "Full mechatronic schematic mapping the electrical wiring, GPIO pin allocations, and power distribution tracks between the central ESP32 receiver, dual L298N motor driver modules, and the 4 DC motor network.",
+  },
+  {
+    src: "/projects/hand-gesture-controlled-car/transmitter-wiring-schematic.png",
+    title: "Gesture Transmitter Node Wiring Schematic",
+    description:
+      "Technical circuit schematic detailing the I2C communication interface, pin interconnections, and power delivery lines between the ESP32 microcontroller and the MPU6050 accelerometer/gyroscope sensor.",
+  },
+  {
+    src: "/projects/hand-gesture-controlled-car/control-logic-flow.png",
+    title: "System Control Logic & Flow Architecture",
+    description:
+      "Control engineering block diagram outlining the closed-loop operational workflow, tracking signal paths from raw hand gestures through the low-latency ESP-NOW wireless communication link to the mechanical motor outputs.",
+  },
+],
+},
 ];
 export const experiences = [
   {
@@ -233,24 +303,69 @@ export const experiences = [
 ];
 export const skills = [
   {
-    category: "Design & Simulation",
-    items: ["SolidWorks", "CREO", "ANSYS", "CAD/CAM"],
+    category: "CAD, Design & Simulation",
+    items: [
+      "SolidWorks",
+      "CREO",
+      "CAD/CAM",
+      "Mechanical Design",
+      "Engineering Drawings",
+      "ANSYS",
+      "FEA / CFD",
+    ],
   },
   {
-    category: "Manufacturing & Industrial Tools",
-    items: ["Manufacturing Processes", "CNC Milling", "SAP", "Primavera P6", "Microsoft Excel"],
+    category: "Manufacturing & CNC",
+    items: [
+      "CNC Milling",
+      "Toolpath Optimization",
+      "CAM Simulation",
+      "Cutting Parameters",
+      "Manufacturing Processes",
+      "Surface Roughness Analysis",
+      "Energy Consumption Analysis",
+    ],
   },
   {
-    category: "Programming & AI",
-    items: ["Python", "Machine Learning", "Data Analysis", "XGBoost", "NSGA-II"],
+    category: "Programming, AI & Optimization",
+    items: [
+      "Python",
+      "C++",
+      "Machine Learning",
+      "XGBoost",
+      "NSGA-II",
+      "Genetic Algorithms",
+      "Multi-Objective Optimization",
+      "Data Analysis",
+    ],
   },
   {
-    category: "Robotics & Automation",
-    items: ["Robotics", "Control Systems", "Automation Systems", "MATLAB", "ESP32"],
+    category: "Robotics, Embedded Systems & Control",
+    items: [
+      "Robotics",
+      "Embedded Systems",
+      "ESP32",
+      "MPU6050",
+      "ESP-NOW",
+      "PWM Motor Control",
+      "Sensor Integration",
+      "Gesture Recognition",
+      "Control Systems",
+      "MATLAB / Simulink",
+    ],
   },
   {
-    category: "Professional Skills",
-    items: ["Technical Report Writing", "Problem Solving", "Teamwork", "Collaboration"],
+    category: "Engineering & Professional Skills",
+    items: [
+      "Mechanical Systems Modeling",
+      "Problem Solving",
+      "Prototype Development",
+      "Technical Documentation",
+      "Project Planning",
+      "Engineering Reports",
+      "Teamwork",
+      "Communication",
+    ],
   },
 ];
 export const contactLinks = [

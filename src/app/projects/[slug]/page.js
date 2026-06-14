@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/ScrollToTop";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -15,6 +16,7 @@ export default async function ProjectPage({ params }) {
 
   return (
     <main className="site-bg min-h-screen text-white">
+        <ScrollToTop />
       <section className="mx-auto max-w-6xl px-6 py-28">
         <Link
           href="/#projects"

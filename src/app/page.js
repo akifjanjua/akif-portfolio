@@ -185,7 +185,7 @@ export default function Home() {
 
   const icons = {
     email: <MdEmail />,
-    whatsapp: <FaWhatsapp />,
+    whatsapp: <FaWhatsapp />, 
     linkedin: <FaLinkedin />,
     github: <FaGithub />,
   };
@@ -516,10 +516,11 @@ export default function Home() {
     <div className="projects-grid grid gap-8 md:grid-cols-2 xl:grid-cols-3">
       {projects.map((project) => (
         <Link
-          key={project.title}
-          href={`/projects/${project.slug}`}
-          className="theme-card project-card group flex h-full flex-col overflow-hidden rounded-3xl"
-        >
+  key={project.title}
+  href={`/projects/${project.slug}`}
+  scroll={true}
+  className="theme-card project-card group flex h-full flex-col overflow-hidden rounded-3xl"
+>
           {project.thumbnail ? (
             <div className="relative aspect-video overflow-hidden border-b border-sky-500/10 bg-slate-950">
               <Image
@@ -669,46 +670,47 @@ export default function Home() {
   </div>
 )}
             {/* Skills Section */}
-      <section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-        <div className="mb-12">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
-            Skills
-          </p>
+<section id="skills" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
+  <div className="mb-12">
+    <p className="section-kicker mb-4 text-sm uppercase tracking-[0.35em]">
+      Skills
+    </p>
 
-          <h2 className="text-4xl font-bold md:text-5xl">
-            Technical Skills and Tools
-          </h2>
+    <h2 className="section-heading text-4xl font-bold">
+      Tools and Skills
+    </h2>
 
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-gray-400">
-            A combination of mechanical engineering fundamentals, design tools,
-            manufacturing knowledge, programming, and automation skills.
-          </p>
-        </div>
+    <p className="mt-5 max-w-2xl leading-7 text-gray-400">
+      A focused collection of engineering tools, technical abilities, and
+      project-based skills developed through academic work, internships, and
+      hands-on engineering projects.
+    </p>
+  </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {skills.map((skillGroup) => (
-            <div
-              key={skillGroup.category}
-              className="theme-card rounded-3xl p-6"
+  <div className="skills-grid grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+    {skills.map((skillGroup) => (
+      <div
+        key={skillGroup.category}
+        className="theme-card skill-card rounded-3xl p-6"
+      >
+        <h3 className="text-xl font-bold leading-snug text-white">
+          {skillGroup.category}
+        </h3>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          {skillGroup.items.map((skill) => (
+            <span
+              key={skill}
+              className="theme-pill rounded-full px-4 py-2 text-sm"
             >
-              <h3 className="text-2xl font-bold">
-                {skillGroup.category}
-              </h3>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                {skillGroup.items.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-gray-700 px-4 py-2 text-sm text-gray-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+              {skill}
+            </span>
           ))}
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
             {/* Contact Section */}
 <section id="contact" className="scroll-mt-24 px-6 py-24">
   <div className="mx-auto max-w-6xl">
