@@ -24,9 +24,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   background: #000000;
@@ -892,4 +889,10 @@ body::before {
     background: rgba(15, 23, 42, 0.78);
     box-shadow: 0 0 34px rgba(56, 189, 248, 0.16);
   }
+}
+.fade-section.skip-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
 }

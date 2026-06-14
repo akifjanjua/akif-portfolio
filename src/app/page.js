@@ -32,124 +32,157 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 export default function Home() {
-const [scrollProgress, setScrollProgress] = useState(0);
-const [isMobile, setIsMobile] = useState(false);
-const [activeSection, setActiveSection] = useState("");
-const [navbarFade, setNavbarFade] = useState(0);
-const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const [navbarFade, setNavbarFade] = useState(0);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
 
-useEffect(() => {
-  const sectionIds = ["home", ...navLinks.map((link) => link.href.replace("#", ""))];
+  useEffect(() => {
+    const sectionIds = [
+      "home",
+      ...navLinks.map((link) => link.href.replace("#", "")),
+    ];
 
-  let ticking = false;
+    let ticking = false;
 
-  const updateActiveSection = () => {
-    let mostVisibleSection = "";
-    let maxVisibleHeight = 0;
+    const updateNavbar = () => {
+      const y = window.scrollY;
 
-    sectionIds.forEach((id) => {
-      const section = document.getElementById(id);
+      setScrollProgress(1 - Math.exp(-y / 520));
+      setNavbarFade(1 - Math.exp(-y / 720));
+    };
 
-      if (!section) return;
+    const updateActiveSection = () => {
+      let mostVisibleSection = "";
+      let maxVisibleHeight = 0;
 
-      const rect = section.getBoundingClientRect();
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
 
-      const visibleTop = Math.max(rect.top, 0);
-      const visibleBottom = Math.min(rect.bottom, window.innerHeight);
-      const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+        if (!section) return;
 
-      if (visibleHeight > maxVisibleHeight) {
-        maxVisibleHeight = visibleHeight;
-        mostVisibleSection = id;
-      }
-    });
+        const rect = section.getBoundingClientRect();
 
-    if (mostVisibleSection === "home") {
-      setActiveSection("");
-      return;
-    }
+        const visibleTop = Math.max(rect.top, 0);
+        const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
 
-    if (mostVisibleSection) {
-      setActiveSection(mostVisibleSection);
-    }
-  };
-
-  const handleScroll = () => {
-  const y = window.scrollY;
-
-  // Smooth limit-style movement: approaches compact state gradually
-  setScrollProgress(1 - Math.exp(-y / 360));
-
-  // Smooth color transition: approaches the final navbar color gradually
-  setNavbarFade(1 - Math.exp(-y / 520));
-
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      updateActiveSection();
-      ticking = false;
-    });
-
-    ticking = true;
-  }
-};
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-    updateActiveSection();
-  };
-
-  handleScroll();
-  handleResize();
-
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  window.addEventListener("resize", handleResize);
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
+        if (visibleHeight > maxVisibleHeight) {
+          maxVisibleHeight = visibleHeight;
+          mostVisibleSection = id;
         }
       });
-    },
-    {
-      threshold: 0.12,
-    }
-  );
 
-  document.querySelectorAll("main section").forEach((section) => {
-    if (section.id === "home") {
-      section.classList.add("is-visible");
-      return;
-    }
+      if (mostVisibleSection === "home") {
+        setActiveSection("");
+        return;
+      }
 
-    section.classList.add("fade-section");
-    revealObserver.observe(section);
-  });
+      if (mostVisibleSection) {
+        setActiveSection(mostVisibleSection);
+      }
+    };
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    window.removeEventListener("resize", handleResize);
-    revealObserver.disconnect();
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateNavbar();
+          updateActiveSection();
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    };
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      updateNavbar();
+      updateActiveSection();
+    };
+
+    updateNavbar();
+    handleResize();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
+
+    document.querySelectorAll("main section").forEach((section) => {
+      if (section.id === "home") {
+        section.classList.add("is-visible");
+        return;
+      }
+
+      section.classList.add("fade-section");
+      revealObserver.observe(section);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+      revealObserver.disconnect();
+    };
+  }, []);
+
+  const desktopHeaderHeight = 82 + 88 * (1 - scrollProgress);
+  const mobileHeaderHeight = 92 + 28 * (1 - scrollProgress);
+
+  const headerHeight = isMobile ? mobileHeaderHeight : desktopHeaderHeight;
+
+  const desktopNameSize = 22 + 8 * (1 - scrollProgress);
+  const mobileNameSize = 18 + 4 * (1 - scrollProgress);
+
+  const nameSize = isMobile ? mobileNameSize : desktopNameSize;
+
+  const navLift = isMobile ? 4 * (1 - scrollProgress) : 8 * (1 - scrollProgress);
+
+  const navbarBlue = 10 + navbarFade * 13;
+  const navbarGlow = 0.04 + 0.18 * navbarFade;
+  const navbarAmber = 0.02 + 0.1 * navbarFade;
+  const navbarBorder = 0.14 + 0.11 * navbarFade;
+
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+
+    const id = href.replace("#", "");
+    const section = document.getElementById(id);
+
+    if (!section) return;
+
+    section.classList.add("skip-reveal", "is-visible");
+    setActiveSection(id);
+
+    const navbarOffset = isMobile ? 112 : 96;
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const targetY = Math.max(sectionTop - navbarOffset, 0);
+
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth",
+    });
+
+    window.history.pushState(null, "", href);
+
+    window.setTimeout(() => {
+      section.classList.remove("skip-reveal");
+    }, 700);
   };
-}, []);
 
-const desktopHeaderHeight = 82 + 88 * (1 - scrollProgress);
-const mobileHeaderHeight = 92 + 28 * (1 - scrollProgress);
-
-const headerHeight = isMobile ? mobileHeaderHeight : desktopHeaderHeight;
-
-const desktopNameSize = 22 + 8 * (1 - scrollProgress);
-const mobileNameSize = 18 + 4 * (1 - scrollProgress);
-
-const nameSize = isMobile ? mobileNameSize : desktopNameSize;
-
-const navLift = isMobile ? 4 * (1 - scrollProgress) : 8 * (1 - scrollProgress);
-const navbarBlue = 10 + navbarFade * 13;
-const navbarGlow = 0.04 + 0.18 * navbarFade;
-const navbarAmber = 0.02 + 0.1 * navbarFade;
-const navbarBorder = 0.14 + 0.11 * navbarFade;
   const icons = {
     email: <MdEmail />,
     whatsapp: <FaWhatsapp />,
@@ -170,7 +203,7 @@ const navbarBorder = 0.14 + 0.11 * navbarFade;
       {/* Navbar */}
      {/* Navbar */}
 <header
-  className="fixed left-0 top-0 z-50 w-full overflow-hidden border-b backdrop-blur-xl transition-[height,box-shadow,border-color] duration-300"
+  className="fixed left-0 top-0 z-50 w-full overflow-hidden border-b backdrop-blur-xl"
   style={{
     height: `${headerHeight}px`,
     background: `
@@ -202,14 +235,14 @@ const navbarBorder = 0.14 + 0.11 * navbarFade;
   />
 
   <div
-  className="mx-auto flex h-full max-w-6xl flex-col justify-center gap-3 px-5 transition-transform duration-300 ease-out md:flex-row md:items-center md:justify-center md:gap-12 md:px-8"
+  className="mx-auto flex h-full max-w-6xl flex-col justify-center gap-3 px-5 md:flex-row md:items-center md:justify-center md:gap-12 md:px-8"
   style={{
     transform: isMobile ? "none" : `translateY(${12 * (1 - scrollProgress)}px)`,
   }}
 >
     <a
   href="#home"
-  className="whitespace-nowrap font-bold tracking-tight text-white drop-shadow-[0_0_18px_rgba(56,189,248,0.12)] transition-[font-size] duration-300 ease-out"
+  className="whitespace-nowrap font-bold tracking-tight text-white drop-shadow-[0_0_18px_rgba(56,189,248,0.12)]"
   style={{ fontSize: `${nameSize}px` }}
 >
       Muhammad Akif Janjua
@@ -217,18 +250,19 @@ const navbarBorder = 0.14 + 0.11 * navbarFade;
 
     <nav className="flex w-full gap-4 overflow-x-auto whitespace-nowrap pb-1 text-xs text-gray-300 md:w-auto md:translate-y-[3px] md:gap-4 md:overflow-visible md:pb-0 md:text-sm">
       {navLinks.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          className={`shrink-0 rounded-full px-2.5 py-1 transition ${
-            activeSection === link.href.replace("#", "")
-              ? "bg-sky-400/15 text-sky-200 shadow-[0_0_20px_rgba(56,189,248,0.18)]"
-              : "text-gray-300 hover:bg-sky-400/10 hover:text-sky-300"
-          }`}
-        >
-          {link.label}
-        </a>
-      ))}
+  <a
+    key={link.href}
+    href={link.href}
+    onClick={(event) => handleNavClick(event, link.href)}
+    className={`shrink-0 rounded-full px-2.5 py-1 transition ${
+      activeSection === link.href.replace("#", "")
+        ? "bg-sky-400/15 text-sky-200 shadow-[0_0_20px_rgba(56,189,248,0.18)]"
+        : "text-gray-300 hover:bg-sky-400/10 hover:text-sky-300"
+    }`}
+  >
+    {link.label}
+  </a>
+))}
     </nav>
   </div>
 </header>
