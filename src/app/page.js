@@ -119,8 +119,8 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
       </span>
 
       <span className="hidden md:block">
-        Mechanical Engineering Graduate focused on manufacturing, robotics, CAD/CAM,
-        and AI-driven solutions.
+  Mechanical Engineering Graduate focused on CAD/CAM, robotics, and AI-driven manufacturing.
+
       </span>
     </h1>
 
