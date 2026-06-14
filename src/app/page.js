@@ -162,41 +162,46 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
   </div>
 </section>
             {/* About Section */}
-      <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-        <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
-              About Me
-            </p>
+<section id="about" className="scroll-mt-24 px-6 py-24">
+  <div className="mx-auto max-w-6xl">
+    <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
+      About Me
+    </p>
 
-            <h2 className="text-4xl font-bold md:text-5xl">
-              Mechanical engineer with a strong interest in modern engineering tools.
-            </h2>
-          </div>
+    <div className="grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr]">
+      <div className="overflow-hidden rounded-[2rem] border border-gray-800 bg-white/[0.04] p-3 shadow-2xl shadow-black/40">
+        <Image
+          src="/profile/akif-about.JPG"
+          alt="Muhammad Akif Janjua"
+          width={700}
+          height={950}
+          className="h-[520px] w-full rounded-[1.5rem] object-cover object-[50%_18%]"
+        />
+      </div>
 
-          <div className="space-y-6 text-gray-400">
-            <p className="text-lg leading-8">
-              I am a Mechanical Engineering graduate from the National University
-              of Sciences and Technology (NUST), with a focus on design,
-              manufacturing, automation, robotics, and AI-based engineering
-              applications.
-            </p>
+      <div>
+        <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
+          Mechanical engineer with a practical approach to design, manufacturing,
+          and intelligent engineering systems.
+        </h2>
 
-            <p className="text-lg leading-8">
-              My work includes projects related to CNC optimization, CAD design,
-              embedded systems, and mechanical problem-solving. I enjoy building
-              practical solutions that combine engineering fundamentals with
-              modern technology.
-            </p>
+        <p className="copy-text mt-6 leading-8 text-gray-400">
+          I am a Mechanical Engineering graduate with experience in CAD/CAM,
+          CNC optimization, robotics, simulation, project documentation, and
+          industrial engineering workflows. My work combines core mechanical
+          engineering knowledge with practical implementation through design
+          projects, internships, and AI-driven manufacturing applications.
+        </p>
 
-            <p className="text-lg leading-8">
-              I am currently developing my skills in web development alongside
-              engineering, using this portfolio as a real project to learn,
-              build, and showcase my work professionally.
-            </p>
-          </div>
-        </div>
-      </section>
+        <p className="copy-text mt-5 leading-8 text-gray-400">
+          I am particularly interested in manufacturing, automation, machine
+          design, robotics, and data-driven engineering solutions that improve
+          productivity, reliability, and real-world decision-making.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Education Section */}
 <section id="education" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
   <div className="mb-12">
