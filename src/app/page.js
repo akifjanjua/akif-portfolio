@@ -152,7 +152,7 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
   <div className="mx-auto w-full max-w-sm md:max-w-md">
     <div className="overflow-hidden rounded-[2rem] border border-gray-800 bg-white/[0.04] p-3 shadow-2xl shadow-black/40">
       <Image
-        src="/profile/akif-profile.JPG"
+        src="/profile/akif-hero-photo.JPG"
         alt="Muhammad Akif Janjua"
         width={700}
         height={900}
