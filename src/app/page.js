@@ -115,11 +115,11 @@ const navLift = isMobile ? 4 * (1 - scrollProgress) : 10 * (1 - scrollProgress);
   <div>
     <h1 className="max-w-4xl text-[28px] font-bold leading-[1.12] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
       <span className="block md:hidden">
-        Mechanical Engineering Graduate focused on CAD/CAM, robotics, and AI.
+        Mechanical Engineering Graduate focused on CAD/CAM, Robotics, and AI.
       </span>
 
       <span className="hidden md:block">
-  Mechanical Engineering Graduate focused on CAD/CAM, robotics, and AI-driven manufacturing.
+  Mechanical Engineering Graduate focused on CAD/CAM, Robotics, and AI.
 
       </span>
     </h1>
